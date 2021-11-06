@@ -1,0 +1,35 @@
+$theme-colors: (
+    'primary': #0091ea //Covalence Blue!  :D
+);
+
+:root {
+    background-color: #121212;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.TopBar {
+    height: 4%;
+    width: 100%;
+}
+
+.Canvas {
+    height: 96%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.Button {
+    display: inline-block;
+    background-color: #0091ea;
+    color: white;
+    font-size: 20px;
+    font-weight:500;
+    height: 100%;
+    width: 150px;
+}
+
+//@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
