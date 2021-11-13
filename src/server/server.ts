@@ -22,7 +22,7 @@ io.on("connection", (socket: socketio.Socket) => {
     })
 
     socket.on("getBlockData", () => {
-        const BlockData = getBlockData(bot, 28, 55, 28)
+        const BlockData = getBlockData(bot, 16, 55, 16)
         socket.emit("setBlockData", (BlockData))
     })
 }) 

@@ -1,6 +1,5 @@
-$theme-colors: (
-    'primary': #0091ea //Covalence Blue!  :D
-);
+@import "utilities/colors";
+@import "base/gobals";
 
 :root {
     background-color: #121212;
@@ -31,5 +30,10 @@ $theme-colors: (
     height: 100%;
     width: 150px;
 }
+
+.UI {
+    position: absolute;
+}
+
 
 //@import '../../../node_modules/bootstrap/scss/bootstrap.scss';

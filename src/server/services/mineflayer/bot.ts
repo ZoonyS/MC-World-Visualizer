@@ -6,7 +6,7 @@ const mineflayer = require('mineflayer')
 export const bot: Bot = mineflayer.createBot({
     username: "ZoonyBot",
     host: 'localhost',
-    port: 1250,
+    port: 1396,
 })
 
 export function lookAtNearestPlayer(): void {

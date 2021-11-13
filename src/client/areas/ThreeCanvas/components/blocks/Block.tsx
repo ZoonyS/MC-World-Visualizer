@@ -1,8 +1,8 @@
-import React, { ReactElement, useRef, useState } from 'react';
+import React, { ReactElement, useRef, useState, useCallback } from 'react';
 import {  Vector3 } from 'three'
 import { useTexture } from '@react-three/drei'
 
-import { getTextureFromName } from '../../services/utility/getTextureFromName'
+import { getTextureFromName } from '../../../../services/utility/getTextureFromName'
 
 interface Props {
     position: Vector3
@@ -16,11 +16,23 @@ export default function Block({position, blockType}: Props): ReactElement {
     const texture: string = getTextureFromName(blockType)    
     const textureMap = useTexture(texture)
     
+    let stop: boolean = false
+
+    const onPointerOver = useCallback((e) => {
+        e.stopPropagation()
+        setHover({...hover, isHovered: true})
+    }, []);
+
+    const onPointerOut = useCallback((e) => {
+        e.stopPropagation()
+        setHover({...hover, isHovered: false})
+    }, []);
+
     return (
         <mesh ref={mesh} position={position} 
         scale={hover.isHovered ? [1.25,1.25,1.25] : [1,1,1]}
-        onPointerOver={e => setHover({...hover, isHovered: true})}
-        onPointerOut={e => setHover({...hover, isHovered: false})}
+        onPointerOver={onPointerOver}
+        onPointerOut={onPointerOut}
         >
             <boxGeometry args={[1, 1, 1]}/>
             <meshStandardMaterial map={textureMap}/>
